@@ -373,7 +373,7 @@ class Bot(BaseBot):
 
     async def is_user_allowed(self, user: User) -> bool:
         user_privileges = await self.highrise.get_room_privilege(user.id)
-        return user_privileges.moderator or user.username in ["kavsak", "The.Ciyo", "wisowe", "Ixien"]
+        return user_privileges.moderator or user.username in ["kavsak", "The.Ciyo", "wisowe", "Ixien", "lordboi"]
 
 
   
@@ -396,7 +396,7 @@ class WebServer():
     t.start()
     
 class RunBot():
-  room_id = "66a7ac107d5eee32f24ea36e"
+  room_id = "6492f643c0a0e46d6f893ea1"
   bot_token = "88ce933235c858601f9385356797555a4e8204fe45ce2d70ef553bc17dbd467d"
   bot_file = "main"
   bot_class = "Bot"
