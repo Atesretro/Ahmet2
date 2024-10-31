@@ -25,7 +25,7 @@ class Bot(BaseBot):
             self.loop_task = asyncio.create_task(self.emote_loop())
         print("hi im alive?")
         await self.highrise.tg.create_task(self.highrise.teleport(
-            session_metadata.user_id, Position(10.5, 2.0, 9.5, "FrontLeft")))
+            session_metadata.user_id, Position(0.25, 1.25, 1.5, "FrontRight")))
         await self.send_periodic_messages()
     
 
@@ -133,8 +133,8 @@ class Bot(BaseBot):
             await self.highrise.set_outfit(outfit=outfit)
 
         
-        if message.startswith("full"):
-            emote_name = message.replace("full", "").strip()
+        if message.startswith("Full"):
+            emote_name = message.replace("Full", "").strip()
             if user.id in self.user_emote_loops and self.user_emote_loops[user.id] == emote_name:
                 await self.stop_emote_loop(user.id)
             else:
@@ -373,7 +373,7 @@ class Bot(BaseBot):
 
     async def is_user_allowed(self, user: User) -> bool:
         user_privileges = await self.highrise.get_room_privilege(user.id)
-        return user_privileges.moderator or user.username in ["kavsak", "The.Ciyo", "wisowe", "BaYdIrMaN_", "lordboi", "sheker16"]
+        return user_privileges.moderator or user.username in ["kavsak", "Atekinz", "wisowe", "RotiiMikii", "BroBerry"]
 
 
   
@@ -396,8 +396,8 @@ class WebServer():
     t.start()
     
 class RunBot():
-  room_id = "66b4c1c021433508c45ff9c0"
-  bot_token = "88ce933235c858601f9385356797555a4e8204fe45ce2d70ef553bc17dbd467d"
+  room_id = "66eec146961875a0239e0fcf"
+  bot_token = "b350dbbbb343dcff86546906b33952416ce80933bea0419d45240756e45cc5dc"
   bot_file = "main"
   bot_class = "Bot"
 
